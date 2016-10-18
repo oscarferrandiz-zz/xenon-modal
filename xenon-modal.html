@@ -1,0 +1,137 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-overlay-behavior/iron-overlay-behavior.html">
+
+<!--
+`xenon-modal`
+Modal polymer element
+
+@demo demo/index.html
+-->
+
+<dom-module id="xenon-modal">
+  <template>
+    <style>
+
+      :host {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .modal__icon {
+        position: absolute;;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+      }
+
+      .modal__content {
+        position: relative;
+        background-color: white;
+        padding: 1rem;
+      }
+
+    </style>
+
+    <div class="modal">
+      <div class="modal__content">
+        <iron-icon class="modal__icon" on-tap="close" icon="close"></iron-icon>
+        <content></content>
+      </div>
+    </div>
+
+
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'xenon-modal',
+
+      properties: {
+
+        withBackdrop: {
+          type: Boolean,
+          value: true
+        },
+
+        opened: {
+          type: Boolean,
+          value: false
+        }
+      },
+
+      behaviors: [
+        Polymer.IronOverlayBehavior
+      ],
+
+      listeners: {
+        'iron-overlay-closed': '_onClose'
+      },
+
+      foo: function() {
+        console.log(foo);
+      },
+
+      // ------- Public methods -------
+
+      showElement: function(elName, properties) {
+
+        this._el = document.createElement(elName);
+
+        // If element properties are defined, we set them
+        if (properties) {
+          this._setElementProperties(properties);
+        }
+
+        // If a previos element is displayed, we remove it
+        if (this.get('opened')) {
+          this.removeElement();
+        }
+
+        Polymer.dom(this).appendChild(this._el);
+        this.open();
+        this.set('opened', true);
+      },
+
+      getElement: function() {
+        return this._el;
+      },
+
+      isOpened: function() {
+        return this.get('opened');
+      },
+
+      getElementProperty: function(property) {
+        return this._el.get(property);
+      },
+
+      // ------- Private methods -------
+
+      _setElementProperties: function(properties) {
+        var self = this;
+        Object.keys(properties).forEach(function(key) {
+          self._el.set(key, properties[key]);
+        });
+      },
+
+      _onClose: function(evt) {
+        this._removeElement();
+        this._el = null;
+        this.set('opened', false);
+      },
+
+      _removeElement() {
+        Polymer.dom(this).removeChild(this._el);
+      }
+
+    });
+  </script>
+</dom-module>

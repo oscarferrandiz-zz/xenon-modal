@@ -1,0 +1,15 @@
+{
+  "name": "xenon-modal",
+  "version": "0.0.1",
+  "description": "Modal polymer component",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "modal",
+    "polymer"
+  ],
+  "author": "Óscar Ferrándiz <oferrandiz@gmail.com>",
+  "license": "ISC"
+}

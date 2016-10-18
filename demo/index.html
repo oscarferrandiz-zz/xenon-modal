@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <title>xenon-modal demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="./dumb-element.html">
+
+    <link rel="import" href="../xenon-modal.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+
+    <div class="vertical-section-container centered">
+      <h3>Xenon-modal demo</h3>
+      <button id="btn">Show dumb-element inside modal</button>
+      <demo-snippet>
+        <template>
+          <xenon-modal></xenon-modal>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <script>
+      (function() {
+        document.getElementById('btn').addEventListener('click', function() {
+          document.querySelector('xenon-modal').showElement('dumb-element', {name: 'Batman'});
+        });
+      })();
+    </script>
+
+  </body>
+</html>
