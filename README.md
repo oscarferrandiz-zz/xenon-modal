@@ -37,7 +37,7 @@ Once showElement has been called, this method returns the custom element instanc
 
 Return the current state of the modal (true or false).
 
-### getElementProperty
+### getElementProperty()
 
 If a custom element is created inside xenon-modal, returns the value of a given property
 
