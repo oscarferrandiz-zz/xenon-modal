@@ -45,3 +45,10 @@ Example:
 ```
 modal.getElementProperty('name');
 ```
+
+## Custom properties
+
+* --close-icon-top
+* --close-icon-right
+* --content-bgcolor
+* --content-padding

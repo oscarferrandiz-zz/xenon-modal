@@ -26,15 +26,15 @@ Modal polymer element
 
       .modal__icon {
         position: absolute;;
-        top: 0;
-        right: 0;
+        top: var(--close-icon-top, 0);
+        right: var(--close-icon-, 0);
         cursor: pointer;
       }
 
       .modal__content {
         position: relative;
-        background-color: white;
-        padding: 1rem;
+        background-color: var(--content-bgcolor, white);
+        padding: var(--content-padding, 1rem);
       }
 
     </style>
