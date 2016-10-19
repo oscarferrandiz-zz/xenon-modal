@@ -1,6 +1,6 @@
 # \<xenon-modal\>
 
-Polymer element able to open insde a modal any custom element, very useful if you have to open many modals; using xenon-modal you can doit in a programatic way, avoiding to have several paper-dialog in your html code.
+Polymer element able to open insde a modal any custom element, very useful if you have to open many modals; using xenon-modal you can do it in a programatic way, avoiding to have several paper-dialog in your html code.
 
 ## Usage
 
