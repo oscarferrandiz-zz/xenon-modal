@@ -41,7 +41,7 @@ Modal polymer element
 
     <div class="modal">
       <div class="modal__content">
-        <iron-icon class="modal__icon" on-tap="close" icon="close"></iron-icon>
+        <iron-icon class="modal__icon" on-tap="close" icon="[[closeIcon]]"></iron-icon>
         <content></content>
       </div>
     </div>
@@ -60,6 +60,11 @@ Modal polymer element
         withBackdrop: {
           type: Boolean,
           value: true
+        },
+
+        closeIcon: {
+          type: String,
+          value: 'close'
         },
 
         opened: {
