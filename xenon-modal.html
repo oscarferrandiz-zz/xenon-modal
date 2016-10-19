@@ -92,7 +92,10 @@ Modal polymer element
           this._setElementProperties(properties);
         }
 
-        // If a previos element is displayed, we remove it
+        // Set xenon-modal as property to instanced element
+        this._el.set('modal', this);
+
+        // If a previous element is displayed, we remove it
         if (this.get('opened')) {
           this.removeElement();
         }
@@ -121,8 +124,6 @@ Modal polymer element
         Object.keys(properties).forEach(function(key) {
           self._el.set(key, properties[key]);
         });
-        // Set xenon-modal as property to instanced element
-        this._el.set('modal', this);
       },
 
       _onClose: function(evt) {
