@@ -116,6 +116,8 @@ Modal polymer element
         Object.keys(properties).forEach(function(key) {
           self._el.set(key, properties[key]);
         });
+        // Set xenon-modal as property to instanced element
+        this._el.set('modal', this);
       },
 
       _onClose: function(evt) {
