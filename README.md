@@ -29,6 +29,14 @@ Example:
 modal.showElement('my-element', {name: 'Foo', age: 'bar'});
 ```
 
+### close();
+
+Closes the opened modal.
+
+```
+modal.close();
+```
+
 ### getElement()
 
 Once showElement has been called, this method returns the custom element instance inside xenon-modal
@@ -37,7 +45,7 @@ Once showElement has been called, this method returns the custom element instanc
 
 Return the current state of the modal (true or false).
 
-### getElementProperty()
+### getElementProperty(propertyName)
 
 If a custom element is created inside xenon-modal, returns the value of a given property
 
